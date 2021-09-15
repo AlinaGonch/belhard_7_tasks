@@ -26,20 +26,18 @@ class Counter:
         self.value = counter
 
     def increase(self, num=1):
-        plus = self.value
         self.value += num
-        return plus
+        return self.value
 
     def decrease(self, num=1):
-        minus = self.value
         self.value -= num
-        return minus
+        return self.value
 
     def __iter__(self):
         self.current = 0
         return self
 
     def __next__(self):
-        current = self.current
-        self.current += 1
+        current = self.value
+        self.value += 1
         return current
